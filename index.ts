@@ -2,6 +2,7 @@
 import fs from "fs"
 import { Client, Message } from "discord.js"
 const token = process.env['token']
+const prefix="poi"
 const client = new Client({
     intents: Object.values(65531).filter(Number.isInteger),
 });
@@ -27,7 +28,10 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
     const args = message.content.split(/ |　/)
     const command=args.shift()??""    
-    commandHandlers.find(a=>a.aliases.includes(command)||a.name==command)
+    if(!command.startsWith("poi")){
+        return
+    }
+    commandHandlers.find(a=>a.aliases.includes(prefix+command)||a.name==prefix+command)
     ?.exec(message as Message,args)
 })
 
