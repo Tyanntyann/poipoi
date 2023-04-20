@@ -4,12 +4,13 @@
   "description": "aa",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx tsc&&node dist/index.js"
+    "test": "",
+    "start": "node dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.9.0"
+    "discord.js": "^14.9.0",
+    "typescript": "^5.0.4"
   }
 }
